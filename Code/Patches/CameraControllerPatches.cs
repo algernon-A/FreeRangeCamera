@@ -7,6 +7,7 @@ namespace FreeRangeCamera
     using System.Collections.Generic;
     using System.Reflection;
     using System.Reflection.Emit;
+    using Colossal.Mathematics;
     using Game;
     using Game.Simulation;
     using HarmonyLib;
@@ -15,6 +16,7 @@ namespace FreeRangeCamera
     /// Harmony patches for <see cref="CameraController"/> to implement per-tile cost limits.
     /// </summary>
     [HarmonyPatch(typeof(CameraController))]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.NamingRules", "SA1313:Parameter names should begin with lower-case letter", Justification = "Harmony")]
     internal static class CameraControllerPatches
     {
         /// <summary>
@@ -53,6 +55,20 @@ namespace FreeRangeCamera
 
                 yield return instruction;
             }
+        }
+
+        /// <summary>
+        /// Harmony prefix to <c>CameraController.zoomRange</c> to implement expanded zoom range.
+        /// Done via prefix instead of using reflection to change backing fields due to inlining.
+        /// </summary>
+        /// <param name="__result">Original method result.</param>
+        /// <returns>Always <c>false</c> (never original method).</returns>
+        [HarmonyPatch("zoomRange", MethodType.Getter)]
+        [HarmonyPrefix]
+        internal static bool ZoomRangePrefix(ref Bounds1 __result)
+        {
+            __result = new Bounds1(1f, 80000f);
+            return false;
         }
     }
 }
