@@ -4,11 +4,9 @@
 
 namespace FreeRangeCamera
 {
-    using Colossal.IO.AssetDatabase;
     using Colossal.Logging;
     using Game;
     using Game.Modding;
-    using Game.Serialization;
 
     /// <summary>
     /// The base mod class for instantiation by the game.
