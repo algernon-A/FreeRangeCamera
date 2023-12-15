@@ -19,9 +19,9 @@
 		<AdditionalFiles Include="stylecop.json" />
 	</ItemGroup>
 	<ItemGroup>
-	  <None Include="Config/PostBuild.csproj" />
-	  <None Include="Config/References.csproj" />
-	  <None Include="Config/Targets.csproj" />
+		<None Include="Config/PostBuild.csproj" />
+		<None Include="Config/References.csproj" />
+		<None Include="Config/Targets.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Lib.Harmony" Version="2.2.2" />

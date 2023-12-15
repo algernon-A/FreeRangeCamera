@@ -28,7 +28,7 @@ namespace FreeRangeCamera
         /// <summary>
         /// Gets the mod's active log.
         /// </summary>
-        internal static ILog Log { get; private set; }
+        internal ILog Log { get; private set; }
 
         /// <summary>
         /// Called by the game when the mod is loaded.
@@ -62,6 +62,9 @@ namespace FreeRangeCamera
                 Log.Critical("Harmony patches not applied; aborting system activation");
                 return;
             }
+
+            // Ensure system is created - we don't need to activate the update.
+            updateSystem.World.GetOrCreateSystemManaged<FreeRangeCameraSystem>();
         }
 
         /// <summary>

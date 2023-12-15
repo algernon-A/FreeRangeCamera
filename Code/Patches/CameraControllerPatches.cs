@@ -60,7 +60,7 @@ namespace FreeRangeCamera
 
         /// <summary>
         /// Harmony prefix to <c>CameraController.zoomRange</c> to implement expanded zoom range.
-        /// Done via prefix instead of using reflection to change backing fields due to inlining.
+        /// Done via prefix instead of using reflection to change backing fields due to in-lining.
         /// </summary>
         /// <param name="__result">Original method result.</param>
         /// <returns>Always <c>false</c> (never original method).</returns>
