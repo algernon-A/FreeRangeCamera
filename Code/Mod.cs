@@ -19,6 +19,11 @@ namespace FreeRangeCamera
         public const string ModName = "Free Range Camera";
 
         /// <summary>
+        /// Gets the active instance reference.
+        /// </summary>
+        public static Mod Instance { get; private set; }
+
+        /// <summary>
         /// Gets the mod's active log.
         /// </summary>
         internal static ILog Log { get; private set; }
@@ -28,8 +33,13 @@ namespace FreeRangeCamera
         /// </summary>
         public void OnLoad()
         {
+            // Set instance reference.
+            Instance = this;
+
             // Initialize logger.
             Log = LogManager.GetLogger(ModName);
+            Log.Info("setting logging level to Debug");
+            Log.effectivenessLevel = Level.Debug;
             Log.Info("loading");
 
             // Apply harmony patches.

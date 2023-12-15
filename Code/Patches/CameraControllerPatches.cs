@@ -34,7 +34,6 @@ namespace FreeRangeCamera
             // Look for call to this.
             MethodInfo getBounds = AccessTools.Method(typeof(TerrainUtils), nameof(TerrainUtils.GetBounds));
 
-
             // Parse instructions.
             IEnumerator<CodeInstruction> instructionEnumerator = instructions.GetEnumerator();
             while (instructionEnumerator.MoveNext())
