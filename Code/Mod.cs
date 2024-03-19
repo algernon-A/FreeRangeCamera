@@ -6,6 +6,7 @@
 
 namespace FreeRangeCamera
 {
+    using System.Reflection;
     using Colossal.Logging;
     using Game;
     using Game.Modding;
@@ -33,28 +34,23 @@ namespace FreeRangeCamera
         /// <summary>
         /// Called by the game when the mod is loaded.
         /// </summary>
-        public void OnLoad()
+        /// <param name="updateSystem">Game update system.</param>
+        public void OnLoad(UpdateSystem updateSystem)
         {
             // Set instance reference.
             Instance = this;
 
             // Initialize logger.
             Log = LogManager.GetLogger(ModName);
+#if DEBUG
             Log.Info("setting logging level to Debug");
             Log.effectivenessLevel = Level.Debug;
-            Log.Info("loading");
+#endif
+
+            Log.Info($"loading {ModName} version {Assembly.GetExecutingAssembly().GetName().Version}");
 
             // Apply harmony patches.
             new Patcher("algernon-FreeRangeCamera", Log);
-        }
-
-        /// <summary>
-        /// Called by the game when the game world is created.
-        /// </summary>
-        /// <param name="updateSystem">Game update system.</param>
-        public void OnCreateWorld(UpdateSystem updateSystem)
-        {
-            Log.Info("starting OnCreateWorld");
 
             // Don't do anything if Harmony patches weren't applied.
             if (Patcher.Instance is null || !Patcher.Instance.PatchesApplied)
@@ -73,6 +69,7 @@ namespace FreeRangeCamera
         public void OnDispose()
         {
             Log.Info("disposing");
+            Instance = null;
 
             // Revert harmony patches.
             Patcher.Instance?.UnPatchAll();

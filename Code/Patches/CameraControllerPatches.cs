@@ -31,7 +31,7 @@ namespace FreeRangeCamera
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> UpdateStatusTranspiler(IEnumerable<CodeInstruction> instructions, MethodBase original)
         {
-            Patcher.Instance.Log.Info("transpiling " + original.DeclaringType + '.' + original.Name);
+            Mod.Instance.Log.Info("transpiling " + original.DeclaringType + '.' + original.Name);
 
             // Look for call to this.
             MethodInfo getBounds = AccessTools.Method(typeof(TerrainUtils), nameof(TerrainUtils.GetBounds));
@@ -45,11 +45,10 @@ namespace FreeRangeCamera
                 // Look for call to TerrainUtils.GetBounds.
                 if (instruction.Calls(getBounds))
                 {
-                    Patcher.Instance.Log.Debug("found call to TerrainUtils.GetBounds");
+                    Mod.Instance.Log.Debug("found call to TerrainUtils.GetBounds");
 
                     // Drop instruction argument and duplicate previous value on stack (m_Pivot).
-                    yield return new CodeInstruction(OpCodes.Pop);
-                    yield return new CodeInstruction(OpCodes.Dup);
+                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(CameraControllerPatches), nameof(GetCustomBounds)));
 
                     continue;
                 }
@@ -71,5 +70,12 @@ namespace FreeRangeCamera
             __result = new Bounds1(1f, 80000f);
             return false;
         }
+
+        /// <summary>
+        /// Returns custom map bounds to repace the game default.
+        /// </summary>
+        /// <param name="data">Terrain height data reference.</param>
+        /// <returns>Custom camera bounds.</returns>
+        private static Bounds3 GetCustomBounds(ref TerrainHeightData data) => new Bounds3(-data.offset, ((data.resolution - 1) / data.scale) - data.offset) * 8f;
     }
 }
