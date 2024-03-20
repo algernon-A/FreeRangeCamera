@@ -1,9 +1,8 @@
 <Publish>
-  <ModId Value="" />
+  <ModId Value="75749" />
   <DisplayName Value="Free Range Camera" />
   <ShortDescription Value="Remove camera restrictions" />
-  <LongDescription Value="Allows the camera to move freely outside the playable area and increases the maximum zoom out range.&lt;br /&gt;       This is a test of updating this description.              **Is markdown supported?** [b]Maybe this[/b].  - Dot points, maybe.  - Maybe?"># Cities Skylines 2 : Free Range Camera Lite
-- **Freely move the camera outside the playable area** - limited to twice the full background map maximum distance (8x the playable area width) so you don't get totally lost.
+  <LongDescription>- **Freely move the camera outside the playable area** - limited to twice the full background map maximum distance (8x the playable area width) so you don't get totally lost.
 - **Increased maximum zoom-out range** - easily see the whole map at once.
 - Works both **in-game** and **in the editor**.
 
@@ -14,12 +13,10 @@ None needed - simply install the mod!  The camera bounds should be freed up auto
 Modders (and aspiring modders!), as always I'm available and happy to chat about what I've done and answer any questions, and also about how you can implement anything that I've done for your own mods.  Come grab me on the Cities: Skylines Modding Discord!</LongDescription>
   <Thumbnail Value="Properties/Thumbnail.png" />
   <Screenshot Value="" />
-  <Tag Value="Mod" />
+  <Tag Value="Code Mod" />
   <ForumLink Value="" />
   <ModVersion Value="0.9" />
-  <GameVersion Value="1.0.*" />
+  <GameVersion Value="1.1.*" />
   <Dependency Id="" DisplayName="" Version="" />
-  <ChangeLog Value="Updated description." />
-  <ExternalLink Type="github" Url="https://github.com/algernon-A/FiveTwentyNineTiles" />
-  <ExternalLink Type="discord" Url="https://discord.gg/7rTsfUdfTf" />
-</Publish>
+  <ChangeLog>Update description.</ChangeLog>&gt;
+  <ExternalLink Type="github" Url="https://github.com/algernon-A/FreeRangeCamera" /><ExternalLink Type="discord" Url="https://discord.gg/7rTsfUdfTf" /></Publish>
