@@ -15,8 +15,10 @@ Modders (and aspiring modders!), as always I'm available and happy to chat about
   <Screenshot Value="" />
   <Tag Value="Code Mod" />
   <ForumLink Value="" />
-  <ModVersion Value="0.9" />
+  <ModVersion Value="1.0" />
   <GameVersion Value="1.1.*" />
   <Dependency Id="" DisplayName="" Version="" />
-  <ChangeLog>Update description.</ChangeLog>&gt;
-  <ExternalLink Type="github" Url="https://github.com/algernon-A/FreeRangeCamera" /><ExternalLink Type="discord" Url="https://discord.gg/7rTsfUdfTf" /></Publish>
+  <ChangeLog>- Release version.</ChangeLog>
+  <ExternalLink Type="github" Url="https://github.com/algernon-A/FreeRangeCamera" />
+  <ExternalLink Type="discord" Url="https://discord.gg/7rTsfUdfTf" />
+</Publish>
