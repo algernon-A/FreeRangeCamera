@@ -1,4 +1,4 @@
-## Free Ramge Camera
+## Free Range Camera
 A mod for Cities: Skylines 2.  Available for download only on [Paradox Mods](https://mods.paradoxplaza.com/mods/75749/Windows).
 
 The primary platform for support is the [Cities Skylines Modding Discord](https://discord.gg/HTav7ARPs2).
