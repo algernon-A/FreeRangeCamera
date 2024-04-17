@@ -11,6 +11,9 @@ The primary platform for support is the [Cities Skylines Modding Discord](https:
 ### Instructions
 None needed - simply install the mod!  The camera bounds should be freed up automatically.
 
+### Credits
+This mod uses the [Harmony patching library](https://github.com/pardeike/Harmony) by Andreas Pardeike.
+
 ### Modders
 Modders (and aspiring modders!), as always I'm available and happy to chat about what I've done and answer any questions, and also about how you can implement anything that I've done for your own mods.  Come grab me on the [Cities Skylines Modding Discord](https://discord.gg/HTav7ARPs2)!
 
