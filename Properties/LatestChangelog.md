@@ -1,1 +1,1 @@
-- Downgrade Harmony to 2.2.2 to keep TDW happy.
+- Update compatibility info for game version 1.2.0.

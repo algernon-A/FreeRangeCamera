@@ -21,10 +21,12 @@ Modders (and aspiring modders!), as always I'm available and happy to chat about
   <Screenshot Value="Properties/Screenshots/HighView.jpg" />
   <Tag Value="Code Mod" />
   <ForumLink Value="https://forum.paradoxplaza.com/forum/threads/free-range-camera.1644741/" />
-  <ModVersion Value="1.0.0.1" />
-  <GameVersion Value="1.1.*" />
+  <ModVersion Value="1.0.0.2" />
+  <GameVersion Value="1.2.*" />
   <Dependency Id="" DisplayName="" Version="" />
-  <ChangeLog>- Downgrade Harmony to 2.2.2 to keep TDW happy.</ChangeLog>
+  <ChangeLog>- Update compatibility info for game version 1.2.0.</ChangeLog>
   <ExternalLink Type="github" Url="https://github.com/algernon-A/FreeRangeCamera" />
   <ExternalLink Type="discord" Url="https://discord.gg/HTav7ARPs2" />
+  <ExternalLink Type="kofi" Url="https://ko-fi.com/algernon" />
+  <ExternalLink Type="paypal" Url="https://paypal.me/algernonCities" />
 </Publish>
