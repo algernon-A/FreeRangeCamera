@@ -1,3 +1,6 @@
+### 1.0.0.3
+- Update compatibility info for game version 1.3.3.
+
 ### 1.0.0.2
 - Update compatibility info for game version 1.2.0.
 
